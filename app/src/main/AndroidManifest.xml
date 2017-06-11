@@ -3,6 +3,7 @@
     package="co.org.husi.taptape">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
 
     <application
         android:allowBackup="true"
