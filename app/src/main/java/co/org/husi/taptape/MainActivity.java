@@ -204,6 +204,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        sensorMan.registerListener(this, accelerometer,
+                SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorMan.unregisterListener(this);
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         if (mRecorder != null) {
